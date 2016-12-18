@@ -28,11 +28,11 @@ app.use((req, res, next) => {
     next();
 });
 
-//maintanence middleware
-app.use((req, res, next) => {
-    res.render('maintenance');
-    //no next 
-});
+// //maintanence middleware
+// app.use((req, res, next) => {
+//     res.render('maintenance');
+//     //no next 
+// });
 
 //hbs helpers
 hbs.registerHelper('getCurrentYear', () => {
@@ -57,6 +57,10 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about.hbs', { name: 'About name' });
 });
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', { name: 'Projects page' });
+})
 
 //bad route
 app.get('/bad', (req, res) => {
