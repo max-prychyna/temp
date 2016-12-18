@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 var app = express(); //create a new expres
 
@@ -68,6 +69,6 @@ app.get('/bad', (req, res) => {
 
 //bind our app to listen to port
 //listens until you tell it to stop
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('app is listening on 3000');
 });
